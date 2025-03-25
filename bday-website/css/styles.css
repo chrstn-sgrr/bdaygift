@@ -35,12 +35,26 @@ header {
 h1 {
     font-size: 12vw;
     margin: 0;
-    opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 1.5s ease forwards;
     letter-spacing: 0.05em; /* Add space between letters */
-    line-height: 1.6; /* Increase line height for better readability */
+    line-height: 1.6; /* Line height */
     word-spacing: 0.2em; /* Add space between words */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack the words vertically */
+    align-items: center; /* Center the words horizontally */
+}
+
+/* Split the heading into parts for animation */
+h1 .word1 {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInScale 0.8s ease forwards 0.3s;
+}
+
+h1 .word2 {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInScale 0.8s ease forwards 0.9s;
 }
 
 .name {
@@ -50,6 +64,56 @@ h1 {
     background-clip: text;
     color: transparent;
     display: inline-block;
+    animation: colorPop 1.5s ease forwards 1.8s;
+    opacity: 0;
+}
+
+/* New animations */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) translateY(20px);
+    }
+    70% {
+        transform: scale(1.1) translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes colorPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) translateY(20px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) translateY(-10px);
+    }
+    70% {
+        transform: scale(1.1) rotate(3deg);
+    }
+    85% {
+        transform: scale(1.1) rotate(-3deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* Add floating hearts that appear after the name animation */
+.heart-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 2.5s;
 }
 
 .paragraph {

@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create floating hearts
     createFloatingHearts();
     
+    // Create header hearts
+    createHeaderHearts();
+    
     // Animate sections on scroll
     const sections = document.querySelectorAll('.fullscreen-section');
     
@@ -45,6 +48,28 @@ function createFloatingHearts() {
         heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
         
         container.appendChild(heart);
+    }
+}
+
+// Add this function to create header hearts
+function createHeaderHearts() {
+    const heartContainer = document.querySelector('.heart-container');
+    const heartSymbols = ['❤️', '💕', '💖', '💗', '💓', '✨', '💜'];
+    
+    // Create 20 hearts
+    for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+        
+        // Random position and delay
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.top = Math.random() * 100 + '%';
+        heart.style.animationDelay = (Math.random() * 5) + 's';
+        heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+        heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        
+        heartContainer.appendChild(heart);
     }
 }
 
