@@ -33,7 +33,7 @@ h1 {
     margin: 0;
     transform: translateY(20px);
     letter-spacing: 0.05em; /* Add space between letters */
-    line-height: 1.5; /* Line height */
+    line-height: 1.2; /* Line height */
     word-spacing: 0.2em; /* Add space between words */
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Stack the words vertically */
@@ -188,6 +188,10 @@ h1 .word2 {
     
     h1 {
         font-size: 14vw;
+    }
+
+    br {
+        display: none; /* Hide line breaks on mobile */
     }
 }
 
