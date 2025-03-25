@@ -4,7 +4,7 @@ body {
     font-style: normal;
     margin: 0;
     padding: 0;
-    background-color: #1b1220; /* Light pink background */
+    background-color: #1b1220; /* Background color */
     color: #F4D6CC; /* Text color */
     line-height: 1.6;
 }
@@ -78,6 +78,9 @@ h1 {
     max-width: 90%;
     margin: 0;
     padding: 0;
+    letter-spacing: 0.03em;  /* Space between characters */
+    word-spacing: 0.05em;    /* Space between words */
+    line-height: 1.8;        /* Space between lines */
 }
 
 /* Make highlighted text stand out more */
@@ -89,7 +92,6 @@ h1 {
     font-weight: 600;
     display: inline-block; /* Helps with the gradient text effect */
 }
-
 /* Media queries for different screen sizes */
 @media (min-width: 768px) {
     .fullscreen-section p {
