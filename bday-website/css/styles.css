@@ -27,6 +27,9 @@ header {
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
