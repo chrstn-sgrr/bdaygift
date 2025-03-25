@@ -39,3 +39,24 @@ function createFloatingHearts() {
         container.appendChild(heart);
     }
 }
+
+const number = document.getElementById('number');
+
+const updateCount = () => {
+    const value = parseInt(number.dataset.value);
+    let initialValue = 0;
+  
+    const increment = Math.ceil(value / 100); // Adjust for speed
+  
+    const increaseCount = setInterval(() => {
+      initialValue += increment;
+  
+      if (initialValue > value) {
+        number.textContent = value;
+        clearInterval(increaseCount);
+        return;
+      }
+  
+      number.textContent = initialValue;
+    }, 50); // Adjust interval for speed
+  };
