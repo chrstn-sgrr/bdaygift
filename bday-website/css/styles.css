@@ -25,6 +25,8 @@ header {
     min-height: 85vh;
     padding: 20px;
     margin-bottom: 30px;
+    line-height: 1.2; /* Line height */
+    word-spacing: 0.2em; /* Add space between words */
     position: relative;
     overflow: hidden;
     display: flex;
