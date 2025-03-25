@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
@@ -20,10 +20,9 @@ header {
     text-align: center;
     position: relative;
     overflow: hidden;
-    min-height: 85vh;
+    min-height: 100vh;
+    padding: 20px;
     margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,21 +158,36 @@ h1 .word2 {
 /* Media queries for different screen sizes */
 @media (min-width: 768px) {
     .fullscreen-section p {
-        font-size: 5vw; /* Slightly smaller on larger screens */
+        font-size: min(5vw, 3rem);
+        max-width: 80%;
+    }
+
+    /* Add some spacing between sections on larger screens */
+    .fullscreen-section {
+        padding: 40px; 
     }
 }
 
 @media (min-width: 1024px) {
     .fullscreen-section p {
-        font-size: 3.5vw; /* Even smaller on desktop */
-        max-width: 80%;
+        font-size: min(3.5vw, 2.5rem);
+        max-width: 70%;
+    }
+
+    .container {
+        padding: 40px;
     }
 }
 
 /* For very small screens */
 @media (max-width: 320px) {
     .fullscreen-section p {
-        font-size: 8vw; /* Larger on very small screens */
+        font-size: 8vw;
+        max-width: 95%;
+    }
+    
+    h1 {
+        font-size: 14vw;
     }
 }
 
