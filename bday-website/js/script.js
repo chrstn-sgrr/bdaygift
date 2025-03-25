@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.animation = 'fadeInUp 1s ease forwards';
+                
+                // If this is section4, start the number animations
+                if (entry.target.id === 'section4') {
+                    const numberElements = entry.target.querySelectorAll('.number');
+                    numberElements.forEach(number => {
+                        updateCount(number);
+                    });
+                }
             }
         });
     }, { threshold: 0.1 });
@@ -40,23 +48,23 @@ function createFloatingHearts() {
     }
 }
 
-const number = document.getElementById('number');
-
-const updateCount = () => {
-    const value = parseInt(number.dataset.value);
+// Updated function to handle number counting animation
+function updateCount(numberElement) {
+    const value = parseInt(numberElement.dataset.value);
     let initialValue = 0;
   
-    const increment = Math.ceil(value / 100); // Adjust for speed
+    // Adjust increment based on the size of the number
+    const increment = Math.ceil(value / 100);
   
     const increaseCount = setInterval(() => {
-      initialValue += increment;
+        initialValue += increment;
   
-      if (initialValue > value) {
-        number.textContent = value;
-        clearInterval(increaseCount);
-        return;
-      }
+        if (initialValue > value) {
+            numberElement.textContent = value;
+            clearInterval(increaseCount);
+            return;
+        }
   
-      number.textContent = initialValue;
-    }, 50); // Adjust interval for speed
-  };
+        numberElement.textContent = initialValue;
+    }, 30); // Slightly faster animation
+}
