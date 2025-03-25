@@ -4,7 +4,7 @@ body {
     font-style: normal;
     margin: 0;
     padding: 0;
-    background-color: #1f131f; /* Light pink background */
+    background-color: #1b1220; /* Light pink background */
     color: #F4D6CC; /* Text color */
     line-height: 1.6;
 }
@@ -55,7 +55,7 @@ h1 {
 
 .paragraph p {
     margin-bottom: 30px;
-}
+} 
 
 /* Full-screen sections */
 .fullscreen-section {
